@@ -38,11 +38,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /* Animación suave para las skills */
         .skill-pill:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
         }
+        /* Clase para ocultar elementos según idioma si fuera necesario */
+        .lang-hidden { display: none; }
     </style>
 </head>
 <body class="bg-dark text-slate-300 antialiased selection:bg-primary selection:text-dark">
@@ -54,12 +55,19 @@
                     JORGE<span class="text-primary">.DEV</span>
                 </a>
                 
-                <div class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#inicio" class="hover:text-primary transition">Inicio</a>
-                    <a href="#perfil" class="hover:text-primary transition">Perfil</a>
-                    <a href="#experiencia" class="hover:text-primary transition">Experiencia</a>
-                    <a href="#stack" class="hover:text-primary transition">Stack</a>
-                    <a href="#contacto" class="border border-slate-700 hover:border-primary px-4 py-2 rounded-lg transition">Contacto</a>
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex space-x-8 text-sm font-medium">
+                        <a href="#inicio" class="hover:text-primary transition" data-i18n="nav_home">Inicio</a>
+                        <a href="#perfil" class="hover:text-primary transition" data-i18n="nav_profile">Perfil</a>
+                        <a href="#experiencia" class="hover:text-primary transition" data-i18n="nav_exp">Experiencia</a>
+                        <a href="#stack" class="hover:text-primary transition" data-i18n="nav_stack">Stack</a>
+                        <a href="#contacto" class="border border-slate-700 hover:border-primary px-4 py-2 rounded-lg transition" data-i18n="nav_contact">Contacto</a>
+                    </div>
+                    
+                    <button onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 hover:border-primary transition text-xs font-mono text-white">
+                        <i class="fas fa-globe"></i>
+                        <span id="lang-label">ES / EN</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -73,16 +81,16 @@
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-xs font-mono text-accent mb-6">
                     <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                    Open to Work & Collaboration
+                    <span data-i18n="hero_status">Open to Work & Collaboration</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6" data-i18n="hero_title">
                     Ingeniero de <br>
                     <span class="gradient-text">Software</span> & <br>
                     Docente.
                 </h1>
                 
-                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed" data-i18n="hero_desc">
                     Soy <strong>Jorge De Lara Hernández</strong>. Combino el desarrollo técnico avanzado (Fullstack & Data Science) con la innovación educativa. Construyo soluciones robustas y formo a la próxima generación de ingenieros.
                 </p>
                 
@@ -90,7 +98,7 @@
                     <a href="https://www.linkedin.com/in/jorge-de-lara-hern%C3%A1ndez-299150261/" target="_blank" class="px-6 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-sky-400 transition flex items-center gap-2">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="#contacto" class="px-6 py-3 border border-slate-700 text-white font-medium rounded-lg hover:bg-slate-800 transition">
+                    <a href="#contacto" class="px-6 py-3 border border-slate-700 text-white font-medium rounded-lg hover:bg-slate-800 transition" data-i18n="hero_contact_btn">
                         Contáctame
                     </a>
                 </div>
@@ -103,17 +111,17 @@
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
                 <div class="space-y-2">
-                    <p class="text-slate-500">// Definición del perfil profesional</p>
+                    <p class="text-slate-500">// <span data-i18n="code_comment">Definición del perfil profesional</span></p>
                     <p><span class="text-purple-400">class</span> <span class="text-yellow-300">JorgeDeLara</span> <span class="text-purple-400">extends</span> <span class="text-yellow-300">Engineer</span> {</p>
                     <div class="pl-4 border-l border-slate-800 space-y-2">
                         <p>constructor() {</p>
                         <p class="pl-4">this.degree = <span class="text-green-400">'Ing. Desarrollo Software'</span>;</p>
-                        <p class="pl-4">this.master = <span class="text-green-400">'Innovación Educativa (En curso)'</span>;</p>
+                        <p class="pl-4">this.master = <span class="text-green-400" data-i18n="code_master">'Innovación Educativa (En curso)'</span>;</p>
                         <p class="pl-4">this.english = <span class="text-green-400">'B2 (TOEFL 498)'</span>;</p>
                         <p>}</p>
                         <br>
                         <p>getCurrentFocus() {</p>
-                        <p class="pl-4"><span class="text-purple-400">return</span> [<span class="text-green-400">'Fullstack Dev'</span>, <span class="text-green-400">'IoT'</span>, <span class="text-green-400">'University Teaching'</span>];</p>
+                        <p class="pl-4"><span class="text-purple-400">return</span> [<span class="text-green-400">'Fullstack Dev'</span>, <span class="text-green-400">'IoT'</span>, <span class="text-green-400" data-i18n="code_teaching">'University Teaching'</span>];</p>
                         <p>}</p>
                     </div>
                     <p>}</p>
@@ -125,19 +133,19 @@
     <section id="perfil" class="py-24 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Formación Académica</h2>
-                <p class="text-slate-400 mt-2">La base teórica que sustenta mi práctica profesional.</p>
+                <h2 class="text-3xl font-bold text-white" data-i18n="edu_title">Formación Académica</h2>
+                <p class="text-slate-400 mt-2" data-i18n="edu_subtitle">La base teórica que sustenta mi práctica profesional.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition group">
                     <div class="flex justify-between items-start mb-4">
                         <i class="fas fa-graduation-cap text-3xl text-primary"></i>
-                        <span class="text-xs font-mono py-1 px-2 rounded bg-primary/20 text-primary">En Curso</span>
+                        <span class="text-xs font-mono py-1 px-2 rounded bg-primary/20 text-primary" data-i18n="edu_status_current">En Curso</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white group-hover:text-primary transition">Maestría en Innovación Educativa</h3>
-                    <p class="text-sm text-slate-400 mb-2">Universidad de Alta Dirección y Emprendimiento</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-white group-hover:text-primary transition" data-i18n="edu_master_title">Maestría en Innovación Educativa</h3>
+                    <p class="text-sm text-slate-400 mb-2" data-i18n="edu_master_uni">Universidad de Alta Dirección y Emprendimiento</p>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="edu_master_desc">
                         Especialización en Altas Capacidades. Integración de metodologías de enseñanza avanzadas con conocimientos técnicos actuales.
                     </p>
                 </div>
@@ -145,11 +153,11 @@
                 <div class="p-6 rounded-xl border border-slate-700 bg-slate-800/50 hover:border-slate-600 transition">
                     <div class="flex justify-between items-start mb-4">
                         <i class="fas fa-user-graduate text-3xl text-slate-500"></i>
-                        <span class="text-xs font-mono py-1 px-2 rounded bg-slate-700 text-slate-300">Titulado</span>
+                        <span class="text-xs font-mono py-1 px-2 rounded bg-slate-700 text-slate-300" data-i18n="edu_status_grad">Titulado</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white">Ingeniería en Desarrollo y Gestión de Software</h3>
-                    <p class="text-sm text-slate-400 mb-2">Universidad Tecnológica de Aguascalientes</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-white" data-i18n="edu_eng_title">Ingeniería en Desarrollo y Gestión de Software</h3>
+                    <p class="text-sm text-slate-400 mb-2" data-i18n="edu_eng_uni">Universidad Tecnológica de Aguascalientes</p>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="edu_eng_desc">
                         Formación sólida en ciclo de vida del software, gestión de proyectos y arquitecturas escalables.
                     </p>
                 </div>
@@ -160,33 +168,31 @@
     <section id="experiencia" class="py-24 relative">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-3">
-                <i class="fas fa-briefcase text-primary"></i> Trayectoria Profesional
+                <i class="fas fa-briefcase text-primary"></i> <span data-i18n="exp_title">Trayectoria Profesional</span>
             </h2>
 
             <div class="space-y-12 border-l-2 border-slate-800 ml-4 md:ml-0 pl-8 md:pl-0">
                 
                 <div class="relative md:grid md:grid-cols-12 md:gap-8 group">
                     <div class="hidden md:block absolute left-1/2 -ml-[9px] w-4 h-4 rounded-full bg-accent border-4 border-dark z-10"></div>
-                    
                     <div class="md:col-span-6 md:text-right mb-4 md:mb-0">
-                        <h3 class="text-2xl font-bold text-white">Profesor de Asignatura</h3>
-                        <p class="text-accent font-mono text-sm mt-1">Sept 2024 - Actualidad</p>
+                        <h3 class="text-2xl font-bold text-white" data-i18n="exp_utc_role">Profesor de Asignatura</h3>
+                        <p class="text-accent font-mono text-sm mt-1" data-i18n="exp_utc_date">Sept 2024 - Actualidad</p>
                         <p class="text-slate-500 text-sm">Universidad Tecnológica de Calvillo</p>
                     </div>
-
                     <div class="md:col-span-6 md:pl-8">
                         <ul class="space-y-3 text-slate-400 text-sm leading-relaxed">
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-check text-accent mt-1"></i>
-                                Cátedra y talleres sobre desarrollo web, móvil e IoT.
+                                <span data-i18n="exp_utc_desc1">Cátedra y talleres sobre desarrollo web, móvil e IoT.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-check text-accent mt-1"></i>
-                                Coordinación de proyectos académicos con enfoque práctico del mundo real.
+                                <span data-i18n="exp_utc_desc2">Coordinación de proyectos académicos con enfoque práctico del mundo real.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-check text-accent mt-1"></i>
-                                Estrategias didácticas activas centradas en competencias profesionales.
+                                <span data-i18n="exp_utc_desc3">Estrategias didácticas activas centradas en competencias profesionales.</span>
                             </li>
                         </ul>
                     </div>
@@ -194,38 +200,35 @@
 
                 <div class="relative md:grid md:grid-cols-12 md:gap-8 group">
                     <div class="hidden md:block absolute left-1/2 -ml-[9px] w-4 h-4 rounded-full bg-slate-700 border-4 border-dark z-10"></div>
-                    
                     <div class="md:col-span-6 md:text-right mb-4 md:mb-0">
                         <h3 class="text-2xl font-bold text-white">Fullstack Developer</h3>
-                        <p class="text-slate-400 font-mono text-sm mt-1">Oct 2022 - Sept 2024</p>
+                        <p class="text-slate-400 font-mono text-sm mt-1" data-i18n="exp_link_date">Oct 2022 - Sept 2024</p>
                         <p class="text-slate-500 text-sm">Linkthinks</p>
                     </div>
-
                     <div class="md:col-span-6 md:pl-8">
                         <ul class="space-y-3 text-slate-400 text-sm leading-relaxed">
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-check text-slate-500 mt-1"></i>
-                                <span class="text-white">Proyecto Destacado:</span> Desarrollo de App móvil Bupa México.
+                                <span data-i18n="exp_link_desc1">Proyecto Destacado: Desarrollo de App móvil Bupa México.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-check text-slate-500 mt-1"></i>
-                                Desarrollo de interfaces web y migraciones de aplicaciones legacy.
+                                <span data-i18n="exp_link_desc2">Desarrollo de interfaces web y migraciones de aplicaciones legacy.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-check text-slate-500 mt-1"></i>
-                                Uso intensivo de bases de datos relacionales y no relacionales.
+                                <span data-i18n="exp_link_desc3">Uso intensivo de bases de datos relacionales y no relacionales.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section id="stack" class="py-24 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-white mb-10 text-center">Conocimiento Técnico</h2>
+            <h2 class="text-3xl font-bold text-white mb-10 text-center" data-i18n="stack_title">Conocimiento Técnico</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
@@ -238,7 +241,6 @@
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Ionic</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">React</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Bootstrap</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Bulma CSS</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">TypeScript</span>
                     </div>
                 </div>
@@ -254,7 +256,6 @@
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Express.js</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">MongoDB</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">SQL Server</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Firebase</span>
                     </div>
                 </div>
 
@@ -265,11 +266,10 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Pandas</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Numpy</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Matplotlib</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Seaborn</span>
                         <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Redes Neuronales</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">IoT Programming</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">IoT</span>
                     </div>
                 </div>
             </div>
@@ -278,8 +278,8 @@
 
     <section id="contacto" class="py-24">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">¿Conectamos?</h2>
-            <p class="text-slate-400 mb-10 text-lg">
+            <h2 class="text-4xl font-bold text-white mb-6" data-i18n="contact_title">¿Conectamos?</h2>
+            <p class="text-slate-400 mb-10 text-lg" data-i18n="contact_desc">
                 Estoy disponible para colaboraciones tecnológicas, consultoría académica o nuevos proyectos de desarrollo.
             </p>
             
@@ -300,7 +300,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="text-left">
-                            <p class="text-xs font-mono text-slate-500 uppercase">Teléfono</p>
+                            <p class="text-xs font-mono text-slate-500 uppercase" data-i18n="contact_phone">Teléfono</p>
                             <p class="font-medium">495-109-5594</p>
                         </div>
                     </a>
@@ -320,8 +320,108 @@
     </section>
 
     <footer class="py-8 text-center border-t border-slate-800 bg-dark text-slate-600 text-sm font-mono">
-        <p>&copy; 2026 Jorge De Lara Hernández. Todos los derechos reservados.</p>
+        <p data-i18n="footer_copy">&copy; 2026 Jorge De Lara Hernández. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        const translations = {
+            es: {
+                nav_home: "Inicio",
+                nav_profile: "Perfil",
+                nav_exp: "Experiencia",
+                nav_stack: "Stack",
+                nav_contact: "Contacto",
+                hero_status: "Open to Work & Collaboration",
+                hero_title: `Ingeniero de <br><span class="gradient-text">Software</span> & <br>Docente.`,
+                hero_desc: "Soy <strong>Jorge De Lara Hernández</strong>. Combino el desarrollo técnico avanzado (Fullstack & Data Science) con la innovación educativa. Construyo soluciones robustas y formo a la próxima generación de ingenieros.",
+                hero_contact_btn: "Contáctame",
+                code_comment: "Definición del perfil profesional",
+                code_master: "'Innovación Educativa (En curso)'",
+                code_teaching: "'University Teaching'",
+                edu_title: "Formación Académica",
+                edu_subtitle: "La base teórica que sustenta mi práctica profesional.",
+                edu_status_current: "En Curso",
+                edu_master_title: "Maestría en Innovación Educativa",
+                edu_master_uni: "Universidad de Alta Dirección y Emprendimiento",
+                edu_master_desc: "Especialización en Altas Capacidades. Integración de metodologías de enseñanza avanzadas con conocimientos técnicos actuales.",
+                edu_status_grad: "Titulado",
+                edu_eng_title: "Ingeniería en Desarrollo y Gestión de Software",
+                edu_eng_uni: "Universidad Tecnológica de Aguascalientes",
+                edu_eng_desc: "Formación sólida en ciclo de vida del software, gestión de proyectos y arquitecturas escalables.",
+                exp_title: "Trayectoria Profesional",
+                exp_utc_role: "Profesor de Asignatura",
+                exp_utc_date: "Sept 2024 - Actualidad",
+                exp_utc_desc1: "Cátedra y talleres sobre desarrollo web, móvil e IoT.",
+                exp_utc_desc2: "Coordinación de proyectos académicos con enfoque práctico del mundo real.",
+                exp_utc_desc3: "Estrategias didácticas activas centradas en competencias profesionales.",
+                exp_link_date: "Oct 2022 - Sept 2024",
+                exp_link_desc1: "<span class='text-white'>Proyecto Destacado:</span> Desarrollo de App móvil Bupa México.",
+                exp_link_desc2: "Desarrollo de interfaces web y migraciones de aplicaciones legacy.",
+                exp_link_desc3: "Uso intensivo de bases de datos relacionales y no relacionales.",
+                stack_title: "Conocimiento Técnico",
+                contact_title: "¿Conectamos?",
+                contact_desc: "Estoy disponible para colaboraciones tecnológicas, consultoría académica o nuevos proyectos de desarrollo.",
+                contact_phone: "Teléfono",
+                footer_copy: "&copy; 2026 Jorge De Lara Hernández. Todos los derechos reservados."
+            },
+            en: {
+                nav_home: "Home",
+                nav_profile: "Profile",
+                nav_exp: "Experience",
+                nav_stack: "Stack",
+                nav_contact: "Contact",
+                hero_status: "Open to Work & Collaboration",
+                hero_title: `Software <br><span class="gradient-text">Engineer</span> & <br>Educator.`,
+                hero_desc: "I am <strong>Jorge De Lara Hernández</strong>. I combine advanced technical development (Fullstack & Data Science) with educational innovation. I build robust solutions and train the next generation of engineers.",
+                hero_contact_btn: "Contact Me",
+                code_comment: "Professional profile definition",
+                code_master: "'Educational Innovation (Ongoing)'",
+                code_teaching: "'University Teaching'",
+                edu_title: "Academic Background",
+                edu_subtitle: "The theoretical foundation supporting my professional practice.",
+                edu_status_current: "In Progress",
+                edu_master_title: "Master's in Educational Innovation",
+                edu_master_uni: "University of High Management and Entrepreneurship",
+                edu_master_desc: "Specialization in High Abilities. Integration of advanced teaching methodologies with current technical knowledge.",
+                edu_status_grad: "Graduated",
+                edu_eng_title: "Software Development & Management Engineering",
+                edu_eng_uni: "Technological University of Aguascalientes",
+                edu_eng_desc: "Solid training in software lifecycle, project management, and scalable architectures.",
+                exp_title: "Professional Career",
+                exp_utc_role: "Subject Professor",
+                exp_utc_date: "Sept 2024 - Present",
+                exp_utc_desc1: "Lectures and workshops on web, mobile, and IoT development.",
+                exp_utc_desc2: "Coordination of academic projects with a practical real-world focus.",
+                exp_utc_desc3: "Active didactic strategies focused on professional competencies.",
+                exp_link_date: "Oct 2022 - Sept 2024",
+                exp_link_desc1: "<span class='text-white'>Featured Project:</span> Development of Bupa Mexico Mobile App.",
+                exp_link_desc2: "Development of web interfaces and migration of legacy applications.",
+                exp_link_desc3: "Intensive use of relational and non-relational databases.",
+                stack_title: "Technical Knowledge",
+                contact_title: "Let's Connect?",
+                contact_desc: "I am available for technological collaborations, academic consulting, or new development projects.",
+                contact_phone: "Phone",
+                footer_copy: "&copy; 2026 Jorge De Lara Hernández. All rights reserved."
+            }
+        };
+
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            updateContent();
+            document.getElementById('lang-label').textContent = currentLang === 'es' ? 'ES / EN' : 'EN / ES';
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
 </body>
 </html>
