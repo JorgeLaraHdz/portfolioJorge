@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge De Lara | Ing. Software & Docente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B1120', // Fondo más profundo
+                        primary: '#38bdf8', // Sky 400
+                        secondary: '#818cf8', // Indigo 400
+                        accent: '#2dd4bf', // Teal 400
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-nav {
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Animación suave para las skills */
+        .skill-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 antialiased selection:bg-primary selection:text-dark">
+
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="font-mono text-xl font-bold text-white tracking-tighter">
+                    JORGE<span class="text-primary">.DEV</span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                    <a href="#perfil" class="hover:text-primary transition">Perfil</a>
+                    <a href="#experiencia" class="hover:text-primary transition">Experiencia</a>
+                    <a href="#stack" class="hover:text-primary transition">Stack</a>
+                    <a href="#contacto" class="border border-slate-700 hover:border-primary px-4 py-2 rounded-lg transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-xs font-mono text-accent mb-6">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    Open to Work & Collaboration
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                    Ingeniero de <br>
+                    <span class="gradient-text">Software</span> & <br>
+                    Docente.
+                </h1>
+                
+                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                    Soy <strong>Jorge De Lara Hernández</strong>. Combino el desarrollo técnico avanzado (Fullstack & Data Science) con la innovación educativa. Construyo soluciones robustas y formo a la próxima generación de ingenieros.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.linkedin.com/in/jorge-de-lara-hern%C3%A1ndez-299150261/" target="_blank" class="px-6 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-sky-400 transition flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="#contacto" class="px-6 py-3 border border-slate-700 text-white font-medium rounded-lg hover:bg-slate-800 transition">
+                        Contáctame
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden md:block bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-2xl font-mono text-sm">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-slate-500">// Definición del perfil profesional</p>
+                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">JorgeDeLara</span> <span class="text-purple-400">extends</span> <span class="text-yellow-300">Engineer</span> {</p>
+                    <div class="pl-4 border-l border-slate-800 space-y-2">
+                        <p>constructor() {</p>
+                        <p class="pl-4">this.degree = <span class="text-green-400">'Ing. Desarrollo Software'</span>;</p>
+                        <p class="pl-4">this.master = <span class="text-green-400">'Innovación Educativa (En curso)'</span>;</p>
+                        <p class="pl-4">this.english = <span class="text-green-400">'B2 (TOEFL 498)'</span>;</p>
+                        <p>}</p>
+                        <br>
+                        <p>getCurrentFocus() {</p>
+                        <p class="pl-4"><span class="text-purple-400">return</span> [<span class="text-green-400">'Fullstack Dev'</span>, <span class="text-green-400">'IoT'</span>, <span class="text-green-400">'University Teaching'</span>];</p>
+                        <p>}</p>
+                    </div>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="perfil" class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Formación Académica</h2>
+                <p class="text-slate-400 mt-2">La base teórica que sustenta mi práctica profesional.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="p-6 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-graduation-cap text-3xl text-primary"></i>
+                        <span class="text-xs font-mono py-1 px-2 rounded bg-primary/20 text-primary">En Curso</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-primary transition">Maestría en Innovación Educativa</h3>
+                    <p class="text-sm text-slate-400 mb-2">Universidad de Alta Dirección y Emprendimiento</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Especialización en Altas Capacidades. Integración de metodologías de enseñanza avanzadas con conocimientos técnicos actuales.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-slate-700 bg-slate-800/50 hover:border-slate-600 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-user-graduate text-3xl text-slate-500"></i>
+                        <span class="text-xs font-mono py-1 px-2 rounded bg-slate-700 text-slate-300">Titulado</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Ingeniería en Desarrollo y Gestión de Software</h3>
+                    <p class="text-sm text-slate-400 mb-2">Universidad Tecnológica de Aguascalientes</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Formación sólida en ciclo de vida del software, gestión de proyectos y arquitecturas escalables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+                <i class="fas fa-briefcase text-primary"></i> Trayectoria Profesional
+            </h2>
+
+            <div class="space-y-12 border-l-2 border-slate-800 ml-4 md:ml-0 pl-8 md:pl-0">
+                
+                <div class="relative md:grid md:grid-cols-12 md:gap-8 group">
+                    <div class="hidden md:block absolute left-1/2 -ml-[9px] w-4 h-4 rounded-full bg-accent border-4 border-dark z-10"></div>
+                    
+                    <div class="md:col-span-6 md:text-right mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold text-white">Profesor de Asignatura</h3>
+                        <p class="text-accent font-mono text-sm mt-1">Sept 2024 - Actualidad</p>
+                        <p class="text-slate-500 text-sm">Universidad Tecnológica de Calvillo</p>
+                    </div>
+
+                    <div class="md:col-span-6 md:pl-8">
+                        <ul class="space-y-3 text-slate-400 text-sm leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1"></i>
+                                Cátedra y talleres sobre desarrollo web, móvil e IoT.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1"></i>
+                                Coordinación de proyectos académicos con enfoque práctico del mundo real.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-accent mt-1"></i>
+                                Estrategias didácticas activas centradas en competencias profesionales.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative md:grid md:grid-cols-12 md:gap-8 group">
+                    <div class="hidden md:block absolute left-1/2 -ml-[9px] w-4 h-4 rounded-full bg-slate-700 border-4 border-dark z-10"></div>
+                    
+                    <div class="md:col-span-6 md:text-right mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold text-white">Fullstack Developer</h3>
+                        <p class="text-slate-400 font-mono text-sm mt-1">Oct 2022 - Sept 2024</p>
+                        <p class="text-slate-500 text-sm">Linkthinks</p>
+                    </div>
+
+                    <div class="md:col-span-6 md:pl-8">
+                        <ul class="space-y-3 text-slate-400 text-sm leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-slate-500 mt-1"></i>
+                                <span class="text-white">Proyecto Destacado:</span> Desarrollo de App móvil Bupa México.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-slate-500 mt-1"></i>
+                                Desarrollo de interfaces web y migraciones de aplicaciones legacy.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-slate-500 mt-1"></i>
+                                Uso intensivo de bases de datos relacionales y no relacionales.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-10 text-center">Conocimiento Técnico</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-mobile-screen text-2xl text-primary"></i>
+                        <h3 class="font-bold text-white">Frontend & Mobile</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Angular</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Ionic</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">React</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Bootstrap</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Bulma CSS</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">TypeScript</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-server text-2xl text-secondary"></i>
+                        <h3 class="font-bold text-white">Backend & DB</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Flask</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Node.js</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Express.js</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">MongoDB</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">SQL Server</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Firebase</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fas fa-brain text-2xl text-accent"></i>
+                        <h3 class="font-bold text-white">Data Science & IoT</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Pandas</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Numpy</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Matplotlib</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Seaborn</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Redes Neuronales</span>
+                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">IoT Programming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">¿Conectamos?</h2>
+            <p class="text-slate-400 mb-10 text-lg">
+                Estoy disponible para colaboraciones tecnológicas, consultoría académica o nuevos proyectos de desarrollo.
+            </p>
+            
+            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 inline-block w-full max-w-lg">
+                <div class="flex flex-col gap-6">
+                    <a href="mailto:mentorlinksr12@outlook.com" class="flex items-center gap-4 text-slate-300 hover:text-white transition group">
+                        <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-primary group-hover:text-dark transition">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs font-mono text-slate-500 uppercase">Email</p>
+                            <p class="font-medium">mentorlinksr12@outlook.com</p>
+                        </div>
+                    </a>
+                    
+                    <a href="tel:4951095594" class="flex items-center gap-4 text-slate-300 hover:text-white transition group">
+                        <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-accent group-hover:text-dark transition">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs font-mono text-slate-500 uppercase">Teléfono</p>
+                            <p class="font-medium">495-109-5594</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jorge-de-lara-hern%C3%A1ndez-299150261/" class="flex items-center gap-4 text-slate-300 hover:text-white transition group">
+                        <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-blue-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs font-mono text-slate-500 uppercase">LinkedIn</p>
+                            <p class="font-medium">Jorge De Lara Hernández</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center border-t border-slate-800 bg-dark text-slate-600 text-sm font-mono">
+        <p>&copy; 2026 Jorge De Lara Hernández. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
