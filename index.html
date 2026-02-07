@@ -13,14 +13,23 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#0B1120', // Fondo más profundo
-                        primary: '#38bdf8', // Sky 400
-                        secondary: '#818cf8', // Indigo 400
-                        accent: '#2dd4bf', // Teal 400
+                        dark: '#0B1120', 
+                        primary: '#38bdf8', 
+                        secondary: '#818cf8', 
+                        accent: '#2dd4bf', 
                     },
                     fontFamily: {
                         sans: ['Outfit', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'scroll': 'scroll 35s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
                     }
                 }
             }
@@ -29,7 +38,7 @@
     
     <style>
         .glass-nav {
-            background: rgba(11, 17, 32, 0.8);
+            background: rgba(11, 17, 32, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
@@ -38,12 +47,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .skill-pill:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+        /* Efecto Neon para los iconos */
+        .tech-icon-glow:hover {
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+            transform: scale(1.1);
         }
-        /* Clase para ocultar elementos según idioma si fuera necesario */
-        .lang-hidden { display: none; }
     </style>
 </head>
 <body class="bg-dark text-slate-300 antialiased selection:bg-primary selection:text-dark">
@@ -98,8 +106,8 @@
                     <a href="https://www.linkedin.com/in/jorge-de-lara-hern%C3%A1ndez-299150261/" target="_blank" class="px-6 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-sky-400 transition flex items-center gap-2">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="#contacto" class="px-6 py-3 border border-slate-700 text-white font-medium rounded-lg hover:bg-slate-800 transition" data-i18n="hero_contact_btn">
-                        Contáctame
+                    <a href="https://github.com/JorgeLaraHdz" target="_blank" class="px-6 py-3 bg-slate-800 text-white font-bold rounded-lg hover:bg-slate-700 transition flex items-center gap-2 border border-slate-700">
+                        <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
             </div>
@@ -226,53 +234,131 @@
         </div>
     </section>
 
-    <section id="stack" class="py-24 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-white mb-10 text-center" data-i18n="stack_title">Conocimiento Técnico</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i class="fas fa-mobile-screen text-2xl text-primary"></i>
-                        <h3 class="font-bold text-white">Frontend & Mobile</h3>
+    <section id="stack" class="py-24 bg-slate-900/30 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 mb-12 text-center">
+            <h2 class="text-3xl font-bold text-white" data-i18n="stack_title">Arsenal Tecnológico</h2>
+        </div>
+        
+        <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll hover:[animation-play-state:paused]">
+                
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-red-500 transition duration-300">
+                        <i class="fab fa-angular text-4xl text-slate-400 group-hover:text-red-500 transition tech-icon-glow"></i>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Angular</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Ionic</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">React</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Bootstrap</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">TypeScript</span>
-                    </div>
-                </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Angular</span>
+                </li>
 
-                <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i class="fas fa-server text-2xl text-secondary"></i>
-                        <h3 class="font-bold text-white">Backend & DB</h3>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-blue-400 transition duration-300">
+                        <i class="fas fa-mobile-screen-button text-4xl text-slate-400 group-hover:text-blue-400 transition tech-icon-glow"></i>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Flask</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Node.js</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Express.js</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">MongoDB</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">SQL Server</span>
-                    </div>
-                </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Ionic</span>
+                </li>
 
-                <div class="p-6 bg-slate-800/30 rounded-xl border border-slate-700">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i class="fas fa-brain text-2xl text-accent"></i>
-                        <h3 class="font-bold text-white">Data Science & IoT</h3>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-yellow-400 transition duration-300">
+                        <i class="fab fa-python text-4xl text-slate-400 group-hover:text-yellow-400 transition tech-icon-glow"></i>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Pandas</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Matplotlib</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Seaborn</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">Redes Neuronales</span>
-                        <span class="skill-pill px-3 py-1 bg-slate-700 text-white text-xs rounded-full">IoT</span>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Python/Flask</span>
+                </li>
+
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-sky-400 transition duration-300">
+                        <i class="fab fa-react text-4xl text-slate-400 group-hover:text-sky-400 transition tech-icon-glow"></i>
                     </div>
-                </div>
-            </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">React</span>
+                </li>
+
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-green-500 transition duration-300">
+                        <i class="fab fa-node text-4xl text-slate-400 group-hover:text-green-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Node.js</span>
+                </li>
+
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-orange-500 transition duration-300">
+                        <i class="fas fa-database text-4xl text-slate-400 group-hover:text-orange-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">SQL/NoSQL</span>
+                </li>
+
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-purple-500 transition duration-300">
+                        <i class="fab fa-bootstrap text-4xl text-slate-400 group-hover:text-purple-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Bootstrap</span>
+                </li>
+
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-emerald-400 transition duration-300">
+                        <i class="fas fa-wifi text-4xl text-slate-400 group-hover:text-emerald-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">IoT</span>
+                </li>
+                 <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-red-400 transition duration-300">
+                        <i class="fab fa-git-alt text-4xl text-slate-400 group-hover:text-red-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Git</span>
+                </li>
+
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-red-500 transition duration-300">
+                        <i class="fab fa-angular text-4xl text-slate-400 group-hover:text-red-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Angular</span>
+                </li>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-blue-400 transition duration-300">
+                        <i class="fas fa-mobile-screen-button text-4xl text-slate-400 group-hover:text-blue-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Ionic</span>
+                </li>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-yellow-400 transition duration-300">
+                        <i class="fab fa-python text-4xl text-slate-400 group-hover:text-yellow-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Python/Flask</span>
+                </li>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-sky-400 transition duration-300">
+                        <i class="fab fa-react text-4xl text-slate-400 group-hover:text-sky-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">React</span>
+                </li>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-green-500 transition duration-300">
+                        <i class="fab fa-node text-4xl text-slate-400 group-hover:text-green-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Node.js</span>
+                </li>
+                <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-orange-500 transition duration-300">
+                        <i class="fas fa-database text-4xl text-slate-400 group-hover:text-orange-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">SQL/NoSQL</span>
+                </li>
+                 <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-purple-500 transition duration-300">
+                        <i class="fab fa-bootstrap text-4xl text-slate-400 group-hover:text-purple-500 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Bootstrap</span>
+                </li>
+                 <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-emerald-400 transition duration-300">
+                        <i class="fas fa-wifi text-4xl text-slate-400 group-hover:text-emerald-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">IoT</span>
+                </li>
+                 <li class="flex flex-col items-center gap-2 group cursor-pointer">
+                    <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-red-400 transition duration-300">
+                        <i class="fab fa-git-alt text-4xl text-slate-400 group-hover:text-red-400 transition tech-icon-glow"></i>
+                    </div>
+                    <span class="text-sm font-mono text-slate-500 group-hover:text-white">Git</span>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -305,13 +391,23 @@
                         </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/jorge-de-lara-hern%C3%A1ndez-299150261/" class="flex items-center gap-4 text-slate-300 hover:text-white transition group">
+                    <a href="https://www.linkedin.com/in/jorge-de-lara-hern%C3%A1ndez-299150261/" target="_blank" class="flex items-center gap-4 text-slate-300 hover:text-white transition group">
                         <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-blue-600 transition">
                             <i class="fab fa-linkedin-in"></i>
                         </div>
                         <div class="text-left">
                             <p class="text-xs font-mono text-slate-500 uppercase">LinkedIn</p>
                             <p class="font-medium">Jorge De Lara Hernández</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/JorgeLaraHdz" target="_blank" class="flex items-center gap-4 text-slate-300 hover:text-white transition group">
+                        <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-slate-500 transition">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs font-mono text-slate-500 uppercase">GitHub</p>
+                            <p class="font-medium">JorgeLaraHdz</p>
                         </div>
                     </a>
                 </div>
@@ -334,7 +430,6 @@
                 hero_status: "Open to Work & Collaboration",
                 hero_title: `Ingeniero de <br><span class="gradient-text">Software</span> & <br>Docente.`,
                 hero_desc: "Soy <strong>Jorge De Lara Hernández</strong>. Combino el desarrollo técnico avanzado (Fullstack & Data Science) con la innovación educativa. Construyo soluciones robustas y formo a la próxima generación de ingenieros.",
-                hero_contact_btn: "Contáctame",
                 code_comment: "Definición del perfil profesional",
                 code_master: "'Innovación Educativa (En curso)'",
                 code_teaching: "'University Teaching'",
@@ -358,7 +453,7 @@
                 exp_link_desc1: "<span class='text-white'>Proyecto Destacado:</span> Desarrollo de App móvil Bupa México.",
                 exp_link_desc2: "Desarrollo de interfaces web y migraciones de aplicaciones legacy.",
                 exp_link_desc3: "Uso intensivo de bases de datos relacionales y no relacionales.",
-                stack_title: "Conocimiento Técnico",
+                stack_title: "Arsenal Tecnológico",
                 contact_title: "¿Conectamos?",
                 contact_desc: "Estoy disponible para colaboraciones tecnológicas, consultoría académica o nuevos proyectos de desarrollo.",
                 contact_phone: "Teléfono",
@@ -373,7 +468,6 @@
                 hero_status: "Open to Work & Collaboration",
                 hero_title: `Software <br><span class="gradient-text">Engineer</span> & <br>Educator.`,
                 hero_desc: "I am <strong>Jorge De Lara Hernández</strong>. I combine advanced technical development (Fullstack & Data Science) with educational innovation. I build robust solutions and train the next generation of engineers.",
-                hero_contact_btn: "Contact Me",
                 code_comment: "Professional profile definition",
                 code_master: "'Educational Innovation (Ongoing)'",
                 code_teaching: "'University Teaching'",
@@ -397,7 +491,7 @@
                 exp_link_desc1: "<span class='text-white'>Featured Project:</span> Development of Bupa Mexico Mobile App.",
                 exp_link_desc2: "Development of web interfaces and migration of legacy applications.",
                 exp_link_desc3: "Intensive use of relational and non-relational databases.",
-                stack_title: "Technical Knowledge",
+                stack_title: "Technical Arsenal",
                 contact_title: "Let's Connect?",
                 contact_desc: "I am available for technological collaborations, academic consulting, or new development projects.",
                 contact_phone: "Phone",
